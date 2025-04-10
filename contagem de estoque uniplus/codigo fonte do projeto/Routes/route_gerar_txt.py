@@ -40,7 +40,7 @@ def gerar_txt():
         # Gerando o arquivo
         with open(CAMINHO_ARQUIVO, "w", encoding="utf-8") as file:
             for codigo_barras, quantidade in produtos:
-                file.write(f"{codigo_barras}|{quantidade}\n")
+                file.write(f"{codigo_barras};{quantidade}\n")
 
         return jsonify({"message": "Arquivo TXT gerado com sucesso", "arquivo": CAMINHO_ARQUIVO})
     

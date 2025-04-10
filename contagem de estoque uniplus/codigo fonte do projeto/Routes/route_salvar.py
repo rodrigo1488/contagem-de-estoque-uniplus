@@ -28,6 +28,7 @@ def salvar_estoque(nome_usuario=None):
 
         descricao = produto["descricao"]
         quantidade_sist = float(produto["quantidade_sist"])
+        codigo_objeto = produto["codigo"]
 
         # Salvar no banco SQLite
         conn = sqlite3.connect(CAMINHO_DB_LOCAL)
@@ -41,7 +42,7 @@ def salvar_estoque(nome_usuario=None):
                     qnt_sist = excluded.qnt_sist,
                     nome_user = excluded.nome_user,
                     data_hora = excluded.data_hora
-            """, (descricao, codigo_barras, quantidade, quantidade_sist, nome_usuario, datetime.datetime.now().strftime("%d-%m-%Y %H:%M")))
+            """, (descricao, codigo_objeto, quantidade, quantidade_sist, nome_usuario, datetime.datetime.now().strftime("%d-%m-%Y %H:%M")))
             conn.commit()
         except sqlite3.Error as e:
             return jsonify({"message": "Erro ao salvar no banco", "error": str(e)}), 500

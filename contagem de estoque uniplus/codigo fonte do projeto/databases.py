@@ -51,7 +51,6 @@ def conectar_postgres():
             user=DATABASE_CONFIG["user"],
             password=DATABASE_CONFIG["password"]
         )
-        print("Conexão bem-sucedida!")
         return conn
     except Exception as e:
         print(f"Erro ao conectar no PostgreSQL: {e}")

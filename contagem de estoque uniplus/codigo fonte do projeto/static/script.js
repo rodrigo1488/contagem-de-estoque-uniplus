@@ -75,6 +75,8 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
           // Exibe os dados no modal
           document.getElementById("descricaoProduto").innerHTML = `<strong>Produto:</strong> ${data.Descricao}`;
           document.getElementById("quantidadeSistema").innerHTML = `<strong>Qtd. Sistema:</strong> ${data.Quantidade}`;
+          document.getElementById("codigo_Produto").innerHTML = `<strong>Código do Produto:</strong> ${codigoBarrasAtual}`;
+          
   
           abrirModal(); // Abre o modal
         }
@@ -139,7 +141,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
               <strong>Código:</strong> ${item.codigo_barras}<br>
               <strong>Quantidade Coletada:</strong> ${item.quantidade}<br>
               <strong>Quantidade no sistema:</strong> ${item.qnt_sist}<br>
-              <strong>Coleto:</strong> ${item.nome_user}<br>
+              <strong>Coletor:</strong> ${item.nome_user}<br>
               <strong>Data:</strong> ${item.data_hora}
             </p>
             <div class="bot">
